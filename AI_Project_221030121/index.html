@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <base href="">
+  <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"> 
+  <link type="text/css" rel="stylesheet" href="css/materialize.css"  media="screen,projection"> 
+  <link type="text/css" rel="stylesheet" href="css/style.css" media="screen,projection"> 
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="js/materialize.min.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="favicon.ico">
+  <title>Search Methods Visualiser</title>
+</head>
+
+<body>
+
+<nav>
+  <div class="nav-wrapper">
+    <a href="#" class="brand-logo center">Search Methods Visualiser</a>
+  </div>
+</nav>
+
+<main>
+
+  <div id="top-view" class="container">
+    <div class="row center m-t-1">
+      <div class="col s12 l6">
+        <div class="collection m-v-0">
+          <p class="collection-item"><span id="stat-name">-</span><strong id="stat-value"></strong></p>
+        </div>
+      </div>
+      <div class="col s12 l6">
+        <div class="collection m-v-0">
+          <p class="collection-item">Nodes: <strong id="node-count">0</strong></p>
+        </div>
+      </div>
+    </div>
+
+    <div class="row m-b-0">
+      <canvas id="graph-view" class="full-width z-depth-1" width="1600px" height="800px"></canvas>
+    </div>
+    <div class="row section m-b-0 p-b-0 center">
+      <div class="input-field col s12 l6 xl6">
+        <select id="select-node-count">
+          <option value="10">10 Nodes</option>
+          <option value="15" selected>15 Nodes</option>
+          <option value="20">20 Nodes</option>
+          <option value="25">25 Nodes</option>
+          <option value="50">50 Nodes</option>
+        </select>
+        <label>Number of Nodes:</label>
+      </div>
+      <div class="col s12 l6 xl6">
+        <a id="create" class="waves-effect waves-light blue lighten-2 btn-large m-b-1">New Graph</a>
+        <a id="reset" class="waves-effect waves-light blue lighten-2 btn-large m-b-1">Reset Graph</a>
+      </div>
+    </div>
+
+    <div class="row center">
+      <div class="col s12">
+        <a id="algo-bfs" class="amber darken-2 waves-effect waves-light btn-large m-b-1"><small>Path Finding</small> <strong>BFS</strong></a>
+        <a id="algo-dfs" class="amber darken-2 waves-effect waves-light btn-large m-b-1"><small>Path Finding</small> <strong>DFS</strong></a>
+        <a id="algo-astar" class="amber darken-3 waves-effect waves-light btn-large m-b-1"><small>Path Finding</small> <strong>A*</strong></a>
+        <a id="clear-selection" class="blue lighten-2 waves-effect waves-light btn-large m-b-1"><small>Reset</small> <strong>Clear Start/Goal</strong></a>
+      </div>
+    </div>
+
+    <div class="divider m-b-3"></div>
+
+    <div class="row section">
+      <div class="col s12 m8">
+        <p><strong>Instructions</strong></p>
+        <ol>
+          <li>Click a node to set the <strong>Start</strong> (green).</li>
+          <li>Click another node to set the <strong>Goal</strong> (blue).</li>
+          <li>Choose <strong>BFS</strong>, <strong>DFS</strong> or <strong>A*</strong> to visualise the path.</li>
+          <li>The final path will be drawn in <strong>red</strong>. Use "Clear Start/Goal" to pick again.</li>
+        </ol>
+        <p><em>Note:</em> BFS shows a shortest path in hops (unweighted), DFS shows the first found path, and A* finds the shortest path by distance.</p>
+      </div>
+    </div>
+</main>
+
+
+</body>
+</html>
